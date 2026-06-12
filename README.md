@@ -1,7 +1,30 @@
-# PRODIGY_CS_04
-📝Simple Keylogger📝
-Using Tkinter, this code creates a Simple Keylogger that lets users record keystrokes in a specified text field.
-Using buttons, users can begin and end logging, and the program records keystrokes and timestamps ⏰. 
-A record of the user's input can be obtained by saving the logged keys to a text file 📂.
-To ensure transparency, a warning message tells users that logging only takes place in the active window ♠️. 
-All in all, it provides a clear illustration of keylogging features in an intuitive interface! 🖥
+# Educational Keylogger — Lab Exercise
+
+> **Disclaimer:** This tool was built strictly for educational purposes in an isolated 
+> virtual machine environment. It should NEVER be deployed on systems you do not own or 
+> have explicit written authorization to test. Unauthorized use is illegal under the 
+> IT Act, 2000 (India) and equivalent laws globally.
+
+## Purpose
+Understanding how keyloggers work is essential for a SOC analyst or VAPT professional.
+This project helped me understand how attackers capture credentials silently, which 
+directly informs detection strategies.
+
+## What it does
+- Captures keystrokes within a defined test window
+- Timestamps each keystroke
+- Saves output to a local log file
+
+## How attackers use this technique (and how defenders catch it)
+- Persistence mechanisms: Registry run keys, scheduled tasks
+- Detection: Endpoint EDR tools flag pynput/keyboard library behavior
+- Mitigation: Application allowlisting, keyboard encryption (Secure Input on macOS)
+
+## Environment
+Tested exclusively on an isolated Windows VM with no network access.
+Never tested on live systems.
+
+## Detection signatures
+This tool would be flagged by:
+- Windows Defender (heuristic behavioral detection)
+- Any EDR with process injection monitoring
